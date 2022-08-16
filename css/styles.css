@@ -270,6 +270,10 @@ body {
 	margin: 0 auto;
 	min-width: 200px;
 	background: var(--accent-color);
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn:focus {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -381,7 +385,7 @@ body {
 
 	background: rgba(47, 48, 58, 0.8);
 
-	font-family: 'Roboto';
+	font-family: inherit;
 	font-style: normal;
 	font-weight: 700;
 	font-size: 14px;
@@ -456,7 +460,7 @@ body {
 	background-color: transparent;
 	color: #AFB1B8;
 
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-icon {
@@ -521,6 +525,7 @@ body {
 .contact-wrap .container {
 	display: flex;
 	align-items: baseline;
+	justify-content: space-between;
 }
 
 .footer-logo {
@@ -570,7 +575,6 @@ body {
 	display: flex;
 	align-items: baseline;
 	flex-direction: column;
-	margin-left: 70px;
 }
 
 .join-soc-title {
@@ -611,6 +615,79 @@ body {
 	height: 20px;
 }
 
+.subscribe-wrap {
+	display: flex;
+	align-items: baseline;
+	flex-direction: column;
+}
+
+.subscribe-title {
+	font-size: 14px;
+	line-height: 1.14;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	margin-bottom: 20px;
+}
+
+.subscribe-form {
+	display: flex;
+}
+
+.subscribe-input {
+	width: 358px;
+	height: 50px;
+	padding-left: 16px;
+	margin-right: 12px;
+
+	background-color: transparent;
+
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+	border-radius: 4px;
+
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-input::placeholder {
+	font-weight: 400;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe-input:focus {
+	color: #ffffff;
+	border-color: #FFFFFF;
+}
+
+.subscribe-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 200px;
+	height: 50px;
+	background: #2196F3;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.88;
+
+	letter-spacing: 0.06em;
+
+	color: #FFFFFF;
+}
+
+.subscribe-send-icon {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(50px, -12px);
+	fill: #FFFFFF;
+}
+
+/* ------------ORDER-MODAL------------- */
 
 .backdrop {
 	position: fixed;
@@ -644,6 +721,7 @@ body {
 	background-color: #FFFFFF;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
+	padding: 40px;
 }
 
 .close-button {
@@ -666,7 +744,183 @@ body {
 	
 	width: 18px;
 	height: 18px;
+
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.order-modal-close-icon:hover {
+	fill: var(--accent-color);
+}
+
+.order-modal-title {
+	margin-bottom: 12px;
+
+	font-family: inherit;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+	letter-spacing: 0.03em;
+	color: var(--primary-title-color);
+}
+
+.order-modal-form {
+	display: block;
+}
+
+.order-modal-list{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.order-modal-label{
+	font-family: inherit;
+	font-style: normal;
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.01em;
+	color: var(--primary-text-color);
+	margin-bottom: 4px;
+}
+
+.modal-input {
+	width: 100%;
+	height: 40px;
+	padding-left: 42px;
+
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.01em;
+
+	color: var(--secondary-text-color);
+	outline: transparent;
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus {
+	border-color: var(--accent-color);
+}
+
+.modal-input:focus + .modal-input-icon {
+	fill: var(--accent-color);
+}
+
+.comment-wrap {
+	margin-bottom: 20px;
+}
+
+.order-modal-comment {
+	outline: transparent;
+}
+
+.order-modal-comment{
+	width: 100%;
+	height: 120px;
+	padding: 12px 16px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+	resize: none;
+
+	font-size: 12px;
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-modal-comment:focus {
+	border-color: var(--accent-color);
+}
+
+.order-modal-comment::placeholder {
+	font-size: 12px;
+	font-weight: 400;
+	color: rgba(117, 117, 117, 0.5);
+}
+
+.input-wrap {
+	position: relative;
+}
+
+.modal-input-icon {
+	position: absolute;
+	left: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-modal-terms {
+	margin-left: 12px;
+	margin-bottom: 30px;
+}
+
+.check-text {
+	display: flex;
+	align-items: center;
+
+	font-family: inherit;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.71;
+	letter-spacing: 0.03em;
+
+	color: var(--primary-text-color);
+}
+
+.check-text span {
+	width: 16px;
+	height: 15px;
+	border: 2px solid #212121;
+	border-radius: 2px;
+	margin-right: 7px;
+	padding: 4px 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-terms-check-icon {
+	opacity: 0;
+}
+
+.order-modal-check:checked + .check-text span {
+	background-color: var(--accent-color);
+	border: none;
+}
+
+.order-modal-check:focus + .check-text span {
+	border-color: var(--accent-color);
+}
+
+.order-modal-check:checked + .check-text .modal-terms-check-icon {
+	fill: #ffffff;
+	opacity: 1;
+}
+
+.terms-link {
+	color: var(--accent-color);
+	text-decoration: underline;
+}
+
+.modal-send-btn {
+	display: block;
+	min-width: 200px;
+	padding: 10px 55px;
+	margin: 0 auto;
+	background: var(--accent-color);
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-send-btn:focus {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
 
 /* ----------------------------------Styles for portfolio.html---------------------------------- */
 /* ------------PORTFOLIO------------ */
@@ -742,7 +996,7 @@ body {
 	left: 0;
 	height: 100%;
 
-	font-family: 'Roboto';
+	font-family: inherit;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 18px;
