@@ -640,6 +640,7 @@ body {
 	margin-right: 12px;
 
 	background-color: transparent;
+	color: #ffffff;
 
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -657,6 +658,10 @@ body {
 .subscribe-input:focus {
 	color: #ffffff;
 	border-color: #FFFFFF;
+}
+
+.subscribe-input:focus::placeholder {
+	color: #ffffff;
 }
 
 .subscribe-btn {
